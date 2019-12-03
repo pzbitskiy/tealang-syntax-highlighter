@@ -1,0 +1,25 @@
+{
+    "name": "tealang-syntax-highlighter",
+    "displayName": "Tealang syntax highlighter",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tealang",
+            "aliases": ["tealang", "tl"],
+            "extensions": [".tl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tealang",
+            "scopeName": "source.tealang",
+            "path": "./syntaxes/tl.tmLanguage.json"
+        }]
+    }
+}

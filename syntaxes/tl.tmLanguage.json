@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "tealang",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.tl",
+					"match": "\\b(if|else|error|return)\\b"
+				},
+				{
+					"name": "keyword.other.tl",
+					"match": "\\b(function|let|const|import|logic)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.tl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tl",
+					"match": "\\\\(x[0-9A-Fa-f]{2}|.|$)"
+
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.tl",
+					"match": "\\b([0-9]+)\\b"
+
+				}
+			]
+		},
+		"comment": {
+			"begin": "//",
+			"end": "$",
+			"name": "comment.line.double-slash.tl"
+		}
+	},
+	"scopeName": "source.tealang"
+}
