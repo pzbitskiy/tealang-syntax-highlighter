@@ -5,5 +5,5 @@
 Copy this directory to `~/.vscode/extensions/`
 
 ```
-cp -r ../tealang-syntax-highlighter ~/.vscode/extensions/
+rsync -rv --exclude=.git --exclude=.vscode ../$(basename `pwd`) ~/.vscode/extensions
 ```

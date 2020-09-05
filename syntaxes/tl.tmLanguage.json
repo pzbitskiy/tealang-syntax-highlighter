@@ -9,7 +9,7 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#numbers"
+			"include": "#literals"
 		},
 		{
 			"include": "#comment"
@@ -24,7 +24,15 @@
 				},
 				{
 					"name": "keyword.other.tl",
-					"match": "\\b(function|let|const|import|logic)\\b"
+					"match": "\\b(function|let|const|import|logic|approval|clearstate)\\b"
+				},
+				{
+					"name": "support.function.tl",
+					"match": "\\b(accounts|apps|assets|txn|gtxn|global|args)\\b"
+				},
+				{
+					"name": "support.function.tl",
+					"match": "\\b(sha256|keccak256|sha512_256|ed25519verify|len|btoi|itob|mulw|addw|concat|substring|get|getEx|put|del|assetBalance|assetIsFrozen|optedIn)\\b"
 				}
 			]
 		},
@@ -40,12 +48,16 @@
 				}
 			]
 		},
-		"numbers": {
+		"literals": {
 			"patterns": [
 				{
 					"name": "constant.numeric.tl",
 					"match": "\\b([0-9]+)\\b"
 
+				},
+				{
+					"name": "variable.parameter.tl",
+					"match": "\\.(Balance|Sender|Fee|FirstValid|FirstValidTime|LastValid|Note|Lease|Receiver|Amount|CloseRemainderTo|VotePK|SelectionPK|VoteFirst|VoteLast|VoteKeyDilution|Type|TypeEnum|XferAsset|AssetAmount|AssetSender|AssetReceiver|AssetCloseTo|GroupIndex|TxID|ApplicationID|OnCompletion|ApplicationArgs|NumAppArgs|Accounts|NumAccounts|ApprovalProgram|ClearStateProgram|RekeyTo|MinTxnFee|MinBalance|MaxTxnLife|ZeroAddress|GroupSize|LogicSigVersion|Round|LatestTimestamp|AssetTotal|AssetDecimals|AssetDefaultFrozen|AssetUnitName|AssetAssetName|AssetURL|AssetMetadataHash|AssetManager|AssetReserve|AssetFreeze|AssetClawback)\\b"
 				}
 			]
 		},
