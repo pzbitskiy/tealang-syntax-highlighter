@@ -20,19 +20,27 @@
 			"patterns": [
 				{
 					"name": "keyword.control.tl",
-					"match": "\\b(if|else|error|return)\\b"
+					"match": "\\b(if|else|error|return|for|break)\\b"
 				},
 				{
 					"name": "keyword.other.tl",
-					"match": "\\b(function|let|const|import|logic|approval|clearstate)\\b"
+					"match": "\\b(function|let|const|import|logic|approval|clearstate|inline)\\b"
+				},
+				{
+					"name": "support.type.tl",
+					"match": "\\b(toint|tobyte)\\b"
 				},
 				{
 					"name": "support.function.tl",
-					"match": "\\b(accounts|apps|assets|txn|gtxn|global|args)\\b"
+					"match": "\\b(accounts|apps|assets|txn|gtxn|global|args|itxn|gitxn)\\b"
 				},
 				{
 					"name": "support.function.tl",
-					"match": "\\b(sha256|keccak256|sha512_256|ed25519verify|len|btoi|itob|mulw|addw|concat|substring|get|getEx|put|del|assetBalance|assetIsFrozen|optedIn)\\b"
+					"match": "\\b(sha256|keccak256|sha512_256|ed25519verify|ecdsa_verify|ecdsa_pk_decompress|ecdsa_pk_recover|len|btoi|itob|mulw|addw|divmodw|divw|expw|concat|substring|extract|assert|getbit|getbyte|setbit|setbyte|exp|shl|shr|sqrt|bitlen|bzero|log|gaid|badd|bsub|bdiv|bmul|blt|bgt|ble|bge|beq|bne|bmod|bor|band|bxor|bnot|bsqrt)\\b"
+				},
+				{
+					"name": "support.function.tl",
+					"match": "\\.(get|getEx|put|del|optedIn|begin|next|push|submit|assetBalance|assetIsFrozen|acctBalance|acctMinBalance|acctAuthAddr|appApprovalProgram|appClearStateProgram|appGlobalNumUint|appGlobalNumByteSlice|appLocalNumUint|appLocalNumByteSlice|appExtraProgramPages|appCreator|appAddress)\\b"
 				}
 			]
 		},
@@ -56,8 +64,18 @@
 
 				},
 				{
+					"name": "constant.numeric.tl",
+					"match": "\\b(0x[0-9a-fA-F]+)\\b"
+
+				},
+				{
 					"name": "variable.parameter.tl",
-					"match": "\\.(Balance|Sender|Fee|FirstValid|FirstValidTime|LastValid|Note|Lease|Receiver|Amount|CloseRemainderTo|VotePK|SelectionPK|VoteFirst|VoteLast|VoteKeyDilution|Type|TypeEnum|XferAsset|AssetAmount|AssetSender|AssetReceiver|AssetCloseTo|GroupIndex|TxID|ApplicationID|OnCompletion|ApplicationArgs|NumAppArgs|Accounts|NumAccounts|ApprovalProgram|ClearStateProgram|RekeyTo|MinTxnFee|MinBalance|MaxTxnLife|ZeroAddress|GroupSize|LogicSigVersion|Round|LatestTimestamp|AssetTotal|AssetDecimals|AssetDefaultFrozen|AssetUnitName|AssetAssetName|AssetURL|AssetMetadataHash|AssetManager|AssetReserve|AssetFreeze|AssetClawback)\\b"
+					"match": "\\.(Balance|MinimumBalance|Sender|Fee|FirstValid|FirstValidTime|LastValid|Note|Lease|Receiver|Amount|CloseRemainderTo|VotePK|SelectionPK|VoteFirst|VoteLast|VoteKeyDilution|Type|TypeEnum|XferAsset|AssetAmount|AssetSender|AssetReceiver|AssetCloseTo|GroupIndex|TxID|ApplicationID|OnCompletion|ApplicationArgs|NumAppArgs|Accounts|NumAccounts|ApprovalProgram|ClearStateProgram|RekeyTo|RekeyTo|ConfigAsset|ConfigAssetTotal|ConfigAssetDecimals|ConfigAssetDefaultFrozen|ConfigAssetUnitName|ConfigAssetName|ConfigAssetURL|ConfigAssetMetadataHash|ConfigAssetManager|ConfigAssetReserve|ConfigAssetFreeze|ConfigAssetClawback|FreezeAsset|FreezeAssetAccount|FreezeAssetFrozen|Assets|NumAssets|Applications|NumApplications|GlobalNumUint|GlobalNumByteSlice|LocalNumUint|LocalNumByteSlice|ExtraProgramPages|Nonparticipation|Logs|NumLogs|CreatedAssetID|CreatedApplicationID|LastLog|StateProofPK|MinTxnFee|MinBalance|MaxTxnLife|ZeroAddress|GroupSize|LogicSigVersion|Round|LatestTimestamp|CurrentApplicationID|CreatorAddress|CurrentApplicationAddress|GroupID|OpcodeBudget|CallerApplicationID|CallerApplicationAddress|AssetTotal|AssetDecimals|AssetDefaultFrozen|AssetUnitName|AssetAssetName|AssetURL|AssetMetadataHash|AssetManager|AssetReserve|AssetFreeze|AssetClawback)\\b"
+				},
+				{
+					"name": "constant.language.tl",
+					"match": "\\b(Secp256k1|UINT16|UINT32|UINT64)\\b"
+
 				}
 			]
 		},
